@@ -1,0 +1,80 @@
+body {
+	background-color: #ecf0f1;
+	height: 100vh;
+	width: 100vw;
+}
+.jumbotron {
+	color: #2c3e50;
+	border: solid 3px #2980b9;
+	border-radius: 20px;
+	padding: 20px;
+	background-color: #3498db;
+	text-align: center;
+	margin: 10px 20px 10px 20px;
+}
+
+.about {
+	border: solid 3px #3498db;
+	margin: 10px;
+	padding: 20px;
+}
+
+.service {
+	border: solid 3px #bdc3c7;
+	margin: 10px;
+	padding: 20px;
+}
+
+.product {
+	border: solid 3px #34495e;
+	margin: 10px;
+	padding: 20px;
+}
+
+.nav {
+	display: flex;
+	justify-content: space-around;
+	background-color: #7f8c8d;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+.link {
+	width: 25%;
+	display: flex;
+	justify-content: space-around;
+	padding: 5px;
+}
+
+.link:hover {
+	background-color: #2980b9;
+	cursor: pointer;
+}
+
+.service-card {
+	border: solid 3px #2c3e50;
+	width: 25%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.icon-circle {
+	border-radius: 500px;
+	background-color: purple;
+	width: 100px;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.service-icon {
+	font-size: 80px;
+	color: white;
+}
+
+.service-card-container {
+	display: flex;
+	justify-content: space-around;
+}
