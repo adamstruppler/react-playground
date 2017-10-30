@@ -3,15 +3,6 @@ body {
 	height: 100vh;
 	width: 100vw;
 }
-.jumbotron {
-	color: #2c3e50;
-	border: solid 3px #2980b9;
-	border-radius: 20px;
-	padding: 20px;
-	background-color: #3498db;
-	text-align: center;
-	margin: 10px 20px 10px 20px;
-}
 
 .about {
 	border: solid 3px #3498db;

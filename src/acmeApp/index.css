@@ -1,0 +1,29 @@
+.jumbotron {
+	color: #2c3e50;
+	border: solid 3px #2980b9;
+	border-radius: 20px;
+	padding: 20px;
+	background-color: #3498db;
+	text-align: center;
+	margin: 10px 20px 10px 20px;
+}
+
+.nav {
+	display: flex;
+	justify-content: space-around;
+	background-color: #7f8c8d;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+.link {
+	width: 25%;
+	display: flex;
+	justify-content: space-around;
+	padding: 5px;
+}
+
+.link:hover {
+	background-color: #2980b9;
+	cursor: pointer;
+}
