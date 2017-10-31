@@ -34,12 +34,22 @@ const NavigationBar = () => {
   )
 }
 
-const CustomerCards = ({title, email, img}) => {
+const CustomerSection = ({arr}) => {
+  return (
+    <div>
+      {
+        arr.map((customers) => {
+          return <CustomerCards customer={customers} />
+        })
+      }
+    </div>
+  )
+}
+
+const CustomerCards = ({name}) => {
   return (
     <div className='customercards'>
-      <h2>{title}</h2>
-      <p>{email}</p>
-      <p>{img}</p>
+      <h1>{name}</h1>
     </div>
   )
 }
@@ -56,11 +66,8 @@ const App = ({data}) => {
         zip={data.company[0].zip}
         phonenumber={data.company[0].phoneNumber}
       />
-      <CustomerCards
-        title={data.customers[0].name}
-        email={data.customers[0].email}
-        img={data.customers[0].img}
-      />
+      <CustomerSection
+        arr={data.customers[0].name} />
     </div>
   )
 }
