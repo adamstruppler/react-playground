@@ -38,18 +38,18 @@ const CustomerSection = ({arr}) => {
   return (
     <div>
       {
-        arr.map((customers) => {
-          return <CustomerCards customer={customers} />
+        arr.map((customer) => {
+          return <CustomerCards customer={customer} />
         })
       }
     </div>
   )
 }
 
-const CustomerCards = ({name}) => {
+const CustomerCards = ({customer}) => {
   return (
     <div className='customercards'>
-      <h1>{name}</h1>
+      <h1>{customer.name}</h1>
     </div>
   )
 }
@@ -66,8 +66,9 @@ const App = ({data}) => {
         zip={data.company[0].zip}
         phonenumber={data.company[0].phoneNumber}
       />
-      <CustomerSection
-        arr={data.customers[0].name} />
+      <CustomerCards
+        arr={data.customer}
+      />
     </div>
   )
 }
