@@ -50,6 +50,8 @@ const CustomerCards = ({customer}) => {
   return (
     <div className='customercards'>
       <h1>{customer.name}</h1>
+      <p>{customer.email}</p>
+      <img src={customer.img} />
     </div>
   )
 }
@@ -66,8 +68,8 @@ const App = ({data}) => {
         zip={data.company[0].zip}
         phonenumber={data.company[0].phoneNumber}
       />
-      <CustomerCards
-        arr={data.customer}
+      <CustomerSection
+        arr={data.customers}
       />
     </div>
   )
