@@ -27,7 +27,7 @@ const AllNames = ({names}) => {
 
 const NumbersComponent = ({numbers}) => {
   const filteredNumbers = numbers.filter((number) => {
-    return number > 30 && number < 70
+    return number > 30 && number < 71
   })
   const mappedNumbers = filteredNumbers.map((number) => {
     return <p>{number}</p>
