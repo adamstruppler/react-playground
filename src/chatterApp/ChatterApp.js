@@ -1,12 +1,14 @@
 import React, {Component} from 'react'
 import faker from 'faker'
-import data from './data'
 import Chats from './Chats'
 import './styles.css'
 
 class ChatterApp extends Component {
   state = {
-    chats: undefined
+    chats: undefined,
+    message: undefined,
+    username: undefined,
+    avatar: undefined
   }
   componentDidMount () {
     // alert('COMPONENT DID MOUNT')
@@ -28,6 +30,37 @@ class ChatterApp extends Component {
     }
     this.setState({chats: chats})
   }
+
+  submitInfo = (e) => {
+    e.preventDefault()
+    let newChat = {
+      avatar: this.state.avatar,
+      username: this.state.username,
+      message: this.state.message
+    }
+    let allChats = this.state.chats
+    allChats.unshift(newChat)
+    this.setState({chats: allChats})
+  }
+
+  setMessage = (e) => {
+    let message = e.target.value
+    this.setState({message: message})
+    console.log(this.state.message)
+  }
+
+  setUsername = (e) => {
+    let username = e.target.value
+    this.setState({username: username})
+    console.log(this.state.username)
+  }
+
+  setAvatar = (e) => {
+    let avatar = e.target.value
+    this.setState({avatar: avatar})
+    console.log(this.state.avatar)
+  }
+
   render () {
     return (
       <div>
@@ -35,6 +68,12 @@ class ChatterApp extends Component {
         {
           this.state.chats ? <Chats chats={this.state.chats} /> : 'Loading...'
         }
+        <form>
+          <input placeholder='Message' onChange={this.setMessage} />
+          <input placeholder='Username' onChange={this.setUsername} />
+          <input placeholder='Avatar' onChange={this.setAvatar} />
+          <button type='sumbit' onClick={this.submitInfo}>Submit</button>
+        </form>
       </div>
     )
   }

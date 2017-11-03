@@ -10,6 +10,7 @@ import ReactDOM from 'react-dom'
 // import MappingAndFiltering from './MappingAndFiltering/MappingAndFiltering'
 import ChatterApp from './chatterApp/ChatterApp'
 import data from './chatterApp/data'
+// import SearchApp from './searchApp/App'
 import registerServiceWorker from './registerServiceWorker'
 
 ReactDOM.render(<ChatterApp data={data} />, document.getElementById('root'))
