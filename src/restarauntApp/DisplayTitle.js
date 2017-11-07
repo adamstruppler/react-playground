@@ -1,11 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-const DisplayTitle = ({data}) => {
+const DisplayTitle = ({company}) => {
   return (
     <div>
-      {
-        <DisplayTitle company={data.company} />
-      }
+      <p>company:{this.company}</p>
     </div>
   )
 }
