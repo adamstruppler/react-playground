@@ -11,11 +11,12 @@ import ReactDOM from 'react-dom'
 // import ChatterApp from './chatterApp/ChatterApp'
 // import data from './chatterApp/data'
 // import SearchApp from './searchApp/App'
-import data from './restarauntApp/data'
-import RestarauntApp from './restarauntApp/RestarauntApp'
+// import data from './restarauntApp/data'
+// import RestarauntApp from './restarauntApp/RestarauntApp'
+import App from './tex-mex-solution/App'
 import registerServiceWorker from './registerServiceWorker'
 
-ReactDOM.render(<RestarauntApp data={data} />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))
 // ReactDOM.render(<ChatterApp />, document.getElementById('root'))
 // ReactDOM.render(<MonsterApp />, document.getElementById('root'))
 // ReactDOM.render(<App data={data} />, document.getElementById('root'))
