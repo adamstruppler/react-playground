@@ -4,9 +4,9 @@ import './style.css'
 import PropTypes from 'prop-types'
 import DisplayTitle from './DisplayTitle'
 import DisplayAddress from './DisplayAddress'
-// import DisplayPriceTag from './DisplayPriceTag'
-// import DisplayPhoneNumber from './DisplayPhoneNumber'
-// import DisplayMenu from './DisplayMenu'
+import DisplayPriceTag from './DisplayPriceTag'
+import DisplayPhoneNumber from './DisplayPhoneNumber'
+import DisplayMenu from './DisplayMenu'
 
 class RestaurantApp extends Component {
   state = {
@@ -54,9 +54,9 @@ class RestaurantApp extends Component {
            <h1 className='jumbotron'>Mexican Restaurant</h1>
            <DisplayTitle company={data.company} />
            <DisplayAddress address={data.address} />
-           <DisplayPriceTag priceTag={data.priceTag} />
+           <DisplayPriceTag price={data.priceTag} />
            <DisplayPhoneNumber phone={data.phone} />
-           <DisplayMenu items={data.items} />
+           <DisplayMenu menu={data.items} />
          </div>
          <form onSubmit={this.submitForm}>
            <h2 className='search'> Search Restraunt Items </h2>
