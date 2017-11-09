@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const SearchForm = ({handleSearchTermChange, updateMenuList}) => {
+const SearchForm = ({updateSpiceLevel, searchTerm, resetMenuList, handleSearchTermChange, updateMenuList}) => {
   return (
     <div>
       <form>
-        <input onChange={handleSearchTermChange} />
-        <button type='button' onClick={updateMenuList}>
-          Search
-        </button>
+        <input onChange={handleSearchTermChange} value={searchTerm} />
+        <button type='button' onClick={updateMenuList}>Search</button>
+        <button type='button' onClick={resetMenuList}>RESET</button>
+        <button type='button' onClick={updateSpiceLevel}>Only Mild</button>
       </form>
     </div>
   )
@@ -16,7 +16,10 @@ const SearchForm = ({handleSearchTermChange, updateMenuList}) => {
 
 SearchForm.propTypes = {
   handleSearchTermChange: PropTypes.func.isRequired,
-  updateMenuList: PropTypes.func.isRequired
+  updateMenuList: PropTypes.func.isRequired,
+  resetMenuList: PropTypes.func.isRequired,
+  searchTerm: PropTypes.string.isRequired,
+  updateSpiceLevel: PropTypes.func.isRequired
 }
 
 export default SearchForm
