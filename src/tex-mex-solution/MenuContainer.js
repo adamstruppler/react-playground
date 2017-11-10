@@ -28,6 +28,20 @@ class MenuContainer extends Component {
     this.setState({menuItems: mildOnly})
   }
 
+  hotSpiceLevel = () => {
+    const hotOnly = this.state.menuItems.filter(hot => {
+      return hot.spiceLevel > 6
+    })
+    this.setState({menuItems: hotOnly})
+  }
+
+  mediumSpiceLevel = () => {
+    const mediumOnly = this.state.menuItems.filter(medium => {
+      return medium.spiceLevel === 5
+    })
+    this.setState({menuItems: mediumOnly})
+  }
+  
   updateMenuList = (e) => {
     e.preventDefault()
     const updatedMenuItems = this.state.menuItems.filter(item => {
@@ -47,6 +61,8 @@ class MenuContainer extends Component {
           resetMenuList={this.resetMenuList}
           searchTerm={this.state.searchTerm}
           updateSpiceLevel={this.updateSpiceLevel}
+          hotSpiceLevel={this.hotSpiceLevel}
+          mediumSpiceLevel={this.mediumSpiceLevel}
         />
         {
           this.state.menuItems
