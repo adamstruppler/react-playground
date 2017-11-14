@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import ListForm from './ListForm'
+import ToDoList from './ToDoList'
 
 class ListContainer extends Component {
   state = {
@@ -20,10 +22,31 @@ class ListContainer extends Component {
     this.setState({dueDate: e.target.value})
   }
 
+  addNewList = (e) => {
+    e.preventDefault()
+    const newToDo = {title: this.state.titleOfList, dueDate: this.state.dueDate}
+    const newToDoList = this.state.list
+    newToDoList.push(newToDo)
+    return (
+      this.setState({list: newToDoList}),
+      this.setState({titleOfList: ''}),
+      this.setState({dueDate: ''})
+    )
+  }
+
   render () {
     return (
       <div>
-        <h4>List is rendering</h4>
+        <ListForm
+          handleTitleOfListChange={this.handleTitleOfListChange}
+          handleDueDateOfListChange={this.handleDueDateOfListChange}
+          addNewList={this.addNewList}
+        />
+        {
+          this.state.list
+            ? <ToDoList list={this.state.list} />
+            : <h1>No List Yet</h1>
+        }
       </div>
     )
   }
