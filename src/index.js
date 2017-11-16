@@ -17,6 +17,7 @@ import ReactDOM from 'react-dom'
 // import App from './holiday-shopping-list/App'
 // import App from './to-do-list/App'
 import App from './toDoSolution/App'
+// import App from './MappingAndFilteringReview/App'
 import registerServiceWorker from './registerServiceWorker'
 
 ReactDOM.render(<App />, document.getElementById('root'))

@@ -4,6 +4,10 @@ import PropTypes from 'prop-types'
 const headerStyle = {
   container: {
     border: '2px solid black'
+  },
+  box: {
+    display: 'flex',
+    flexDirection: 'row'
   }
 }
 
