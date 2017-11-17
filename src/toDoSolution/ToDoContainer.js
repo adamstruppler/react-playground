@@ -74,6 +74,27 @@ markComplete = (e) => {
   this.sortByCompleted()
 }
 
+resetToDos = () => {
+  this.setState({toDos: []})
+  localStorage.clear()
+  this.sortByCompleted()
+}
+deleteToDo = (e) => {
+  const theToDo = this.state.toDos.find(item => {
+    return Number(e.target.id) === Number(item.id)
+  })
+  console.log(theToDo)
+  const newArray = this.state.toDos.filter(item => {
+    return item.id !== theToDo.id
+  })
+  console.log(newArray)
+  this.setState({toDos: newArray})
+  localStorage.setItem('toDos', JSON.stringify(newArray))
+  setTimeout(() => {
+    this.sortByCompleted()
+  }, 3000)
+}
+
 render () {
   return (
     <div>
@@ -84,12 +105,13 @@ render () {
         updateDueDate={this.updateDueDate}
         updateTitle={this.updateTitle}
       />
+      <button onClick={this.resetToDos} type='button'>Reset To Do List</button>
       <div>
         {
           this.state.toDos
             ? <div style={list.container}>
-              <ToDoList toDos={this.state.completed} markComplete={this.markComplete} title='Items are completed' />
-              <ToDoList toDos={this.state.incomplete} markComplete={this.markComplete} title='Items are incomplete' />
+              <ToDoList toDos={this.state.completed} markComplete={this.markComplete} deleteToDo={this.deleteToDo} title='Items are completed' />
+              <ToDoList toDos={this.state.incomplete} markComplete={this.markComplete} deleteToDo={this.deleteToDo} title='Items are incomplete' />
             </div>
             : 'Loading'
 
