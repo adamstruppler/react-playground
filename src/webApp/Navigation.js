@@ -8,9 +8,9 @@ const NavigationBar = () => {
   return (
     <nav className='nav'>
       <Link to='/'>Home</Link>
-      <Link to='/about' />
-      <Link to='/products' />
-      <Link to='/contact' />
+      <Link to='/about'>About</Link>
+      <Link to='/products'>Products</Link>
+      <Link to='/contact'>Contact</Link>
     </nav>
   )
 }

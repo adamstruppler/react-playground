@@ -16,6 +16,9 @@ const App = () => {
     <Router>
       <div>
         <Route exact path='/' component={Jumbotron} />
+        <Route path='/about' component={About} />
+        <Route path='/products' component={Products} />
+        <Route path='/contact' component={Contact} />
         <NavigationBar />
         <Jumbotron
           title={faker.name.title()}
