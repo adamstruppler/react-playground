@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './index.css'
+import CustomerCards from './CustomerCards'
+// import './index.css'
 
 const Jumbotron = ({title, street, city, state, zip, phonenumber}) => {
   return (
@@ -46,16 +47,6 @@ const CustomerSection = ({arr}) => {
   )
 }
 
-const CustomerCards = ({customer}) => {
-  return (
-    <div className='customercards'>
-      <h1>{customer.name}</h1>
-      <p>{customer.email}</p>
-      <img src={customer.img} />
-    </div>
-  )
-}
-
 const App = ({data}) => {
   return (
     <div>
@@ -67,6 +58,11 @@ const App = ({data}) => {
         state={data.company[0].state}
         zip={data.company[0].zip}
         phonenumber={data.company[0].phoneNumber}
+      />
+      <CustomerCards
+        name={data.customer.name}
+        email={data.customer.email}
+        img={data}
       />
       <CustomerSection
         arr={data.customers}

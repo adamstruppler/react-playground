@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import faker from 'faker'
 import Chats from './Chats'
-import './styles.css'
+import ChatForm from './ChatForm'
+// import './styles.css'
 
 class ChatterApp extends Component {
   state = {
@@ -68,12 +69,12 @@ class ChatterApp extends Component {
         {
           this.state.chats ? <Chats chats={this.state.chats} /> : 'Loading...'
         }
-        <form>
-          <input placeholder='Message' onChange={this.setMessage} />
-          <input placeholder='Username' onChange={this.setUsername} />
-          <input placeholder='Avatar' onChange={this.setAvatar} />
-          <button type='sumbit' onClick={this.submitInfo}>Submit</button>
-        </form>
+        <ChatForm
+          setUsername={this.setUsername}
+          setAvatar={this.setAvatar}
+          setMessage={this.setMessage}
+          submitInfo={this.submitInfo}
+        />
       </div>
     )
   }

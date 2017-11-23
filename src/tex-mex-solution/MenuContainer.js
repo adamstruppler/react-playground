@@ -41,7 +41,7 @@ class MenuContainer extends Component {
     })
     this.setState({menuItems: mediumOnly})
   }
-  
+
   updateMenuList = (e) => {
     e.preventDefault()
     const updatedMenuItems = this.state.menuItems.filter(item => {

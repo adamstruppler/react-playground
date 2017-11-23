@@ -1,9 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+const styles = {
+  monsterCard: {
+    width: '50%',
+    display: 'flex',
+    flexDirection: 'column', 
+    border: '1px solid red'
+  }
+}
+
 const MonsterCard = ({ monster }) => {
   return (
-    <div className='monster-card'>
+    <div style={styles.monsterCard}>
       <h1>{ monster.name }</h1>
       {
         monster.diet.map((food) => {

@@ -2,11 +2,19 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import MonsterCard from './MonsterCard'
 
-const MonsterSection = ({ arr }) => {
+const styles = {
+  MonsterSection: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  }
+}
+
+const MonsterSection = ({monsters}) => {
   return (
-    <div>
+    <div style={styles.MonsterSection}>
       {
-        arr.map((monster) => {
+        monsters.map((monster) => {
           return <MonsterCard monster={monster} />
         })
       }
@@ -15,7 +23,7 @@ const MonsterSection = ({ arr }) => {
 }
 
 MonsterSection.propTypes = {
-  arr: PropTypes.array.isRequired
+  monsters: PropTypes.array.isRequired
 }
 
 export default MonsterSection

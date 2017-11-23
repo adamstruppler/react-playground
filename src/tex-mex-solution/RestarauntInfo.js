@@ -1,9 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+const styles = {
+  jumbotron: {
+    border: 'solid 3px black',
+    borderRadius: 20,
+    padding: 10,
+    margin: 10,
+    backgroundColor: '#ecf0f1',
+    color: 'blue',
+    textAlign: 'center'
+  }
+}
+
 const RestarauntInfo = ({name, address, phone}) => {
   return (
-    <div>
+    <div style={styles.jumbotron}>
       <h1>{name}</h1>
       <div>
         <p>

@@ -1,5 +1,6 @@
 import React from 'react'
 import ChatBox from './ChatBox'
+import PropTypes from 'prop-types'
 
 const Chats = ({chats}) => {
   return (
@@ -15,6 +16,10 @@ const Chats = ({chats}) => {
       }
     </div>
   )
+}
+
+Chats.propTypes = {
+  chats: PropTypes.string.isRequired
 }
 
 export default Chats

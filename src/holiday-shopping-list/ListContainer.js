@@ -4,16 +4,11 @@ import GiftForm from './GiftForm'
 
 class ListContainer extends Component {
   state = {
-    gifts: undefined,
+    gifts: [],
     nameOfGift: undefined,
     price: undefined,
     budget: 500,
     totalPriceOfGift: undefined
-  }
-
-  componentDidMount () {
-    const giftsArray = [{name: 'Apple TV', price: 300}, {name: 'candy', price: 3}]
-    this.setState({gifts: giftsArray})
   }
 
   handleNameOfGiftChange = (e) => {
@@ -37,9 +32,14 @@ class ListContainer extends Component {
       alert('You cant get this, you are broke!')
       return
     } else {
-      this.setState({gifts: newGiftList})
-      this.setState({nameOfGift: ''})
-      this.setState({price: ''})
+      let currentBudget = this.state.budget
+      currentBudget -= giftPrice
+      this.setState({
+        budget: currentBudget,
+        gifts: newGiftList,
+        nameOfGift: '',
+        price: ''
+      })
     }
     this.setState({gifts: newGiftList})
   }
@@ -56,7 +56,9 @@ class ListContainer extends Component {
   render () {
     return (
       <div>
-        <h1>List is rendering</h1>
+        <div>
+          <h3>Budget: ${this.state.budget}</h3>
+        </div>
         <GiftForm
           handleNameOfGiftChange={this.handleNameOfGiftChange}
           handlePriceChange={this.handlePriceChange}
